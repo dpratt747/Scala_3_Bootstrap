@@ -6,7 +6,7 @@ ThisBuild / organizationName := "dpratt747"
 lazy val root = (project in file("."))
   .settings(
     name := "bootstrap[change name in build.sbt]",
-    libraryDependencies ++= dependencies
+    libraryDependencies ++= dependencies ++ testDependencies
   )
 
 lazy val integration = (project in file("integration"))
