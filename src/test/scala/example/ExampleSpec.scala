@@ -1,12 +1,12 @@
 package example
 
-import example.ExampleTest.*
+import example.ExampleSpec.*
 import org.scalacheck.Gen
 import org.scalatest.funspec.AnyFunSpec
 import org.scalatest.matchers.should.Matchers
 import org.scalatestplus.scalacheck.ScalaCheckPropertyChecks
 
-final class ExampleTest extends AnyFunSpec with ScalaCheckPropertyChecks with Matchers {
+final class ExampleSpec extends AnyFunSpec with ScalaCheckPropertyChecks with Matchers {
   describe("Example") {
     it("should generate an apple string") {
       forAll(fruitStringsGen) { string =>
@@ -16,6 +16,6 @@ final class ExampleTest extends AnyFunSpec with ScalaCheckPropertyChecks with Ma
   }
 }
 
-object ExampleTest {
+object ExampleSpec {
   private val fruitStringsGen: Gen[String] = Gen.oneOf("Apple", "APPLE", "ApPle")
 }
